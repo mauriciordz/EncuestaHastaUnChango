@@ -1,0 +1,21 @@
+<h2> Bienvenido a tu REGISTRO! </h2>
+
+
+  <p id="html"></p>
+
+  <form id="target" action="/registro" method="post">
+   
+    Registrate!:
+    <br>
+
+    <p>Usuario</p> <input type="text" name="Usuario" value=<%=session[:user_name]%>> <br>
+    <p>Mail</p><input type="email" name="Mail" value=<%=session[:email]%> ><br>
+    <p>Contraseña</p><input type="password" name="Contraseña" value=<%=session[:password]%> ><br>
+    <br>
+    <% if !logged_in? %>
+    <input type="submit" value="Enviar!"> <br>
+    <% else %>
+    <input type="submit" value="Editar!"> <br>
+    <% end %>
+
+  </form>

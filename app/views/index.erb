@@ -1,0 +1,34 @@
+ <center><h1>Bienvenido a Survey Monkey!</h1></center>
+ <p>Vamos a elegir que es lo que quieres hacer: </p>
+
+<p style="color:red" ><%= @message %></p>
+<p style="color:blue"=><%= session[:user_name] %></p>
+    
+
+
+  
+
+
+
+
+<% if !logged_in? %>
+  <form id="registro" action="/register_temp" method="get">
+    <br><input type="submit" value="Registrar!"> <br>
+  </form>
+	<form id="login" action="/login_temp" method="get">
+    <br><input type="submit" value="Login!"> <br>
+  </form>
+<% else %>
+  <form id="logout" action="/logout" method="get">
+    <br><input type="submit" value="Logout!"> <br>
+  </form>
+  <form id="edit" action="/register_temp" method="get">
+    <br><input type="submit" value="Edit User!"> <br>
+  </form>
+<% end %>
+
+<form id="jugar" action="/survey" method="post">
+    <br><input type="submit" value="Survey!"> <br>
+</form>
+
+

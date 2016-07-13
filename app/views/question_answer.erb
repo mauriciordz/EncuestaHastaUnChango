@@ -1,0 +1,21 @@
+<h2> Esta es la pregunta que elegiste <%= session[:user_name] %> : </h2>
+
+
+<p><%= @question.question %></p>
+  
+ <% @answers.each do |answer| %>   
+  	<p>* <%= answer.answer%> </p><br>
+  	<a href='/survey/answer/me_gusta/<%=answer.id%>'>Me gusta </a> <%= answer.vote_like%>
+  	<a href='/survey/answer/me_disgusta/<%=answer.id%>'>Me disgusta</a> <%= answer.vote_dislike%> 
+  	<br>
+  	<br>
+<%end%>
+
+
+ <form action="/survey/question/answer" method="get">
+    <br><input type="submit" value="New Answer!"> <br>
+ </form>
+
+ <form action="/salir" method="get">
+    <br><input type="submit" value="Salir!"> <br>
+ </form>

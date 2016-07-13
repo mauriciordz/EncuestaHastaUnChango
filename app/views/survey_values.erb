@@ -1,0 +1,21 @@
+<h2> Este es SurveyMonkey, esta es la informacion de la encuesta <%= session[:user_name] %> ! </h2>
+
+<p> Encuesta: <%= @survey.survey %></p>
+
+<% @survey.questions.each do |question| %>
+  <p> Pregunta:  <%= question.question %></p>
+  <% question.answers.each do |answer| %>
+    <p style="text-indent: 50px;"> * <%= answer.answer %> </p>
+  <% end %>
+  <br>
+<% end %>
+
+ 
+    
+
+
+  <form action="/salir" method="get">
+    <br><input type="submit" value="Salir!"> <br>
+  </form>
+
+

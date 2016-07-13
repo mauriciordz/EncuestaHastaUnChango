@@ -1,0 +1,17 @@
+<center><h1>Bienvenido <%= session[:user_name] %> a SurveyMonkey!</h1></center>
+  <p>Todas las encuestas </p>
+
+<% @surveys.each do |survey| %>
+<a href ='/survey/find_survey/<%=survey.id%>'><%= survey.survey %></a><br>
+<% end%>
+<br>
+
+<p> Agregar nueva encuesta </p>
+<form id="new_survey" action="/survey/question" method="post">
+  <input type="text" name="new_survey">
+  <input type="submit" value="Create Survey"><br>
+</form>
+
+<form action="/salir" method="get">
+    <br><input type="submit" value="Salir!"> <br>
+ </form>
